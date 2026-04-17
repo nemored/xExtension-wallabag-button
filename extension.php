@@ -26,4 +26,9 @@ class WallabagButtonExtension extends Minz_Extension
       FreshRSS_Context::userConf()->save();
     }
   }
+
+  public function isConfigured(): bool
+  {
+    return FreshRSS_Context::userConf()->attributeString('wallabag_access_token') != '';
+  }
 }
