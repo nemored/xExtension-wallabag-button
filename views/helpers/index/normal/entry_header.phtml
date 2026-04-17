@@ -35,8 +35,9 @@ $lazyload = FreshRSS_Context::userConf()->lazyload;
     }
 
     $extension = Minz_ExtensionManager::findExtension('Wallabag Button');
-    $wallabag_button_icon = $extension->getFileUrl('add_to_wallabag.svg', 'svg');
+    $wallabag_button_icon = $extension->getFileUrl('add_to_wallabag.svg');
 
+    // @phpstan-ignore method.notFound
     if ($extension->isConfigured()) {
       ?>
       <li class="item manage">
