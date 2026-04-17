@@ -32,11 +32,11 @@ class FreshExtension_wallabagButton_Controller extends Minz_ActionController
 
   public function requestAccessAction(): void
   {
-    $instance_url = Minz_Request::paramString('instance_url');
-    $client_id = Minz_Request::paramString('client_id');
-    $client_secret = Minz_Request::paramString('client_secret');
-    $username = Minz_Request::paramString('username');
-    $password = Minz_Request::paramString('password');
+    $instance_url = Minz_Request::paramString('wallabag_instance_url');
+    $client_id = Minz_Request::paramString('wallabag_client_id');
+    $client_secret = Minz_Request::paramString('wallabag_client_secret');
+    $username = Minz_Request::paramString('wallabag_username');
+    $password = Minz_Request::paramString('wallabag_password');
 
     // Handle leading slash
     if (substr($instance_url, -1) == '/')

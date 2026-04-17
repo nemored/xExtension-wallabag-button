@@ -4,7 +4,7 @@ return array(
   'wallabagButton' => array(
     'configure' => array(
       'connect_description' => '
-        <ul class="listedNumbers">
+        <ul class="wb_listedNumbers">
           <li>Go to \'<c><wallabag_intance_url>/developer</c>\' by clicking the \'API clients management\' menu</li>
           <li>Create a new API Client with the name of your choice</li>
           <li>Enter your Wallabag instance url</li>
