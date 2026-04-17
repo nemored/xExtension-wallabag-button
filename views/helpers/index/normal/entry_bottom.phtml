@@ -40,7 +40,7 @@ $bottomline_link = FreshRSS_Context::userConf()->bottomline_link;
         $arUrl = array('c' => 'wallabagButton', 'a' => 'add', 'params' => array('id' => $this->entry->id()));
         ?>
         <a class="item-element wallabagButton" href="<?= Minz_Url::display($arUrl); ?>">
-          <div class="lds-dual-ring disabled"></div>
+          <div class="wb_lds-dual-ring wb_disabled"></div>
           <img class="icon" src="<?= $wallabag_button_icon ?>" />
         </a>
       </li>

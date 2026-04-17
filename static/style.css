@@ -14,27 +14,27 @@
   background: #1abc9c;
 }
 
-input#client_id {
+input#wallabag_client_id {
   width: 300px;
 }
 
-input#client_secret {
+input#wallabag_client_secret {
   width: 300px;
 }
 
-input#keyboard_shortcut {
+input#wallabag_keyboard_shortcut {
   width: 30px;
 }
 
-.listedNumbers {
+.wb_listedNumbers {
   list-style-type: decimal;
 }
 
-.item-element.wallabagButton .disabled {
+.wb_disabled {
   display: none !important;
 }
 
-.lds-dual-ring {
+.wb_lds-dual-ring {
   display: inline-block;
   width: 12px;
   height: 12px;
@@ -43,7 +43,7 @@ input#keyboard_shortcut {
   margin: -4px 0 0 -2px;
 }
 
-.lds-dual-ring:after {
+.wb_lds-dual-ring:after {
   content: " ";
   display: block;
   width: 12px;
@@ -51,13 +51,14 @@ input#keyboard_shortcut {
   border-radius: 50%;
   border: 2px solid #e74c3c;
   border-color: #e74c3c transparent #e74c3c transparent;
-  animation: lds-dual-ring 1.2s linear infinite;
+  animation: wb_lds-dual-ring 1.2s linear infinite;
 }
 
-@keyframes lds-dual-ring {
+@keyframes wb_lds-dual-ring {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }

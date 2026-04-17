@@ -4,7 +4,7 @@ return array(
   'wallabagButton' => array(
     'configure' => array(
       'connect_description' => '
-        <ul class="listedNumbers">
+        <ul class="wb_listedNumbers">
             <li>Navigujte do své Wallabag instance na \'<c><vaše_instance>/developer</c>\'</li>
             <li>Vytvořte nového Klienta API se jménem Vašeho výberu</li>
             <li>Zadejte URL své Wallabag instance.</li>

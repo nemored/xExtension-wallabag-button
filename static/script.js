@@ -65,8 +65,8 @@ function requestFailed(activeId, wallabagButtonImg, loadingAnimation)
 {
   delete pending_entries[activeId];
 
-  wallabagButtonImg.classList.remove("disabled");
-  loadingAnimation.classList.add("disabled");
+  wallabagButtonImg.classList.remove("wb_disabled");
+  loadingAnimation.classList.add("wb_disabled");
 
   badAjax(this.status == 403);
 }
@@ -80,10 +80,10 @@ async function add_to_wallabag(wallabagButton, active)
   }
 
   let wallabagButtonImg = wallabagButton.querySelector("img");
-  wallabagButtonImg.classList.add("disabled");
+  wallabagButtonImg.classList.add("wb_disabled");
 
-  let loadingAnimation = wallabagButton.querySelector(".lds-dual-ring");
-  loadingAnimation.classList.remove("disabled");
+  let loadingAnimation = wallabagButton.querySelector(".wb_lds-dual-ring");
+  loadingAnimation.classList.remove("wb_disabled");
 
   let activeId = active.getAttribute('id');
   if (pending_entries[activeId])
@@ -108,8 +108,8 @@ async function add_to_wallabag(wallabagButton, active)
     {
       delete pending_entries[activeId];
 
-      wallabagButtonImg.classList.remove("disabled");
-      loadingAnimation.classList.add("disabled");
+      wallabagButtonImg.classList.remove("wb_disabled");
+      loadingAnimation.classList.add("wb_disabled");
 
       if (!response.ok || response != 301)
       {
