@@ -25,6 +25,10 @@ class WallabagButtonExtension extends Minz_Extension
 
     $keyboard_shortcut = Minz_Request::paramString('wallabag_keyboard_shortcut');
     FreshRSS_Context::userConf()->_attribute('wallabag_keyboard_shortcut', $keyboard_shortcut);
+
+    $cainfo_path = Minz_Request::paramString('wallabag_cainfo_path');
+    FreshRSS_Context::userConf()->_attribute('wallabag_cainfo_path', $cainfo_path);
+
     FreshRSS_Context::userConf()->save();
 
     $button_location = Minz_Request::paramString('wallabag_button_location');

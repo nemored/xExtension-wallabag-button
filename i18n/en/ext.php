@@ -9,6 +9,7 @@ return array(
           <li>Create a new API Client with the name of your choice</li>
           <li>Enter your Wallabag instance url</li>
           <li>Enter your \'username\', \'password\', \'client_id\' and \'client_secret\'</li>
+          <li>(optional) enter a path to self-signed certificate</li>
           <li>Press \'Connect to Wallabag\'</li>
         </ul>
         <span>Details can be found on <a href="https://github.com/Joedmin/xExtension-wallabag-button" target="_blank">GitHub</a>!',
@@ -28,6 +29,7 @@ return array(
       'button_location_header' => 'Top line',
       'button_location_bottom' => 'Bottom line',
       'button_location_hidden' => 'Hidden',
+      'cainfo_path' => 'Path to CA certificate (optional, for self-signed certificates)',
     ),
     'notifications' => array(
       'added_article_to_wallabag' => 'Successfully added <i>\'%s\'</i> to Wallabag!',

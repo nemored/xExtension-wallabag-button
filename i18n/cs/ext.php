@@ -9,6 +9,7 @@ return array(
             <li>Vytvořte nového Klienta API se jménem Vašeho výberu</li>
             <li>Zadejte URL své Wallabag instance.</li>
             <li>Zadejte své \'uživatelské jméno\', \'heslo\', \'client_id\' a \'client_secret\'</li>
+            <li>(volitelné) zadejte cestu k Vašemu certifikátu s valstním podpisem</li>
             <li>\'Připojit se k Wallabagu\'</li>
         </ul>
       <span>Podrobnosti naleznete na <a href="https://github.com/Joedmin/xExtension-wallabag-button" target="_blank">GitHubu</a>!',
@@ -28,6 +29,7 @@ return array(
       'button_location_header' => 'Horní řádek',
       'button_location_bottom' => 'Spodní řádek',
       'button_location_hidden' => 'Skryté',
+      'cainfo_path' => 'Cesta k CA certifikátu (volitelné, pro vlastní certifikáty)',
     ),
     'notifications' => array(
       'added_article_to_wallabag' => 'Úspěšně přidán <i>\'%s\'</i> do Wallabagu!',
