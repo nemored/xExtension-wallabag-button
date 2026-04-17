@@ -10,6 +10,7 @@ With this extension you can simply press the Wallabag Button next to an article 
 4. Create a new API Client with the name of your choice
 5. Enter your Wallabag instance url in the Wallabag Button extension settings
 6. Enter your `username`, `password`, `client_id` and `client_secret` in the Wallabag Button extension settings
+7. *Ooptional enter a path to self-signed certificate*
 7. Press "Connect to Wallabag"
 8. *Optional Set a custom keyboard shortcut*
 

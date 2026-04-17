@@ -180,6 +180,12 @@ class FreshExtension_wallabagButton_Controller extends Minz_ActionController
     curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($curl, CURLOPT_HEADER, true);
+
+    $cainfo_path = FreshRSS_Context::userConf()->attributeString('wallabag_cainfo_path');
+    if ($cainfo_path !== '') {
+      curl_setopt($curl, CURLOPT_CAINFO, $cainfo_path);
+    }
+
     return $curl;
   }
 
