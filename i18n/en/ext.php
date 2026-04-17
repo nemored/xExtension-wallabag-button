@@ -21,7 +21,13 @@ return array(
       'keyboard_shortcut' => 'Keyboard shortcut',
       'extension_disabled' => 'You need to enable the extension before you can connect to Wallabag!',
       'connected_to_wallabag' => 'You are connected to Wallabag with the account <b>%s</b> at <b>%s</b>.',
-      'revoke_access' => 'Disconnect from Wallabag!'
+      'revoke_access' => 'Disconnect from Wallabag!',
+      'save_changes' => 'Save',
+      'button_location' => 'Wallabag button position. The keyboard shortcut works even when the \'Hidden\' option is selected.',
+      'button_location_header_bottom' => 'Top and bottom line',
+      'button_location_header' => 'Top line',
+      'button_location_bottom' => 'Bottom line',
+      'button_location_hidden' => 'Hidden',
     ),
     'notifications' => array(
       'added_article_to_wallabag' => 'Successfully added <i>\'%s\'</i> to Wallabag!',
@@ -33,6 +39,8 @@ return array(
       'request_access_failed' => 'Access request failed! Wallabag API error code: %s',
       'article_not_found' => 'Can\'t find article!',
       'authorization_revoked' => 'Authorization successfully revoked!',
+      'changes_saved_sucessfully' => "Changes saved successfully!",
+      'changes_failed' => "Could not save changes! Value '%s' is not supported!",
     )
   ),
 );

@@ -31,12 +31,12 @@ $bottomline_link = FreshRSS_Context::userConf()->bottomline_link;
     <?php
     }
     $extension = Minz_ExtensionManager::findExtension('Wallabag Button');
+    assert($extension instanceof WallabagButtonExtension);
     $wallabag_button_icon = $extension->getFileUrl('add_to_wallabag.svg');
 
-    // @phpstan-ignore method.notFound
     if ($extension->isConfigured()) {
       ?>
-      <li class="item manage">
+      <li <?= $extension->shouldBeShown("bottom") ? "class=\"item manage\"" : "class=\"item manage wb_disabled\"" ?>>
         <?php
         $arUrl = array('c' => 'wallabagButton', 'a' => 'add', 'params' => array('id' => $this->entry->id()));
         ?>

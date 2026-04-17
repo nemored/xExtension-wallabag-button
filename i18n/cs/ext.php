@@ -21,7 +21,13 @@ return array(
       'keyboard_shortcut' => ' Klávesová zkratka',
       'extension_disabled' => 'Před připojením ke službě Wallabag je nutné rozšíření povolit!',
       'connected_to_wallabag' => 'Jste připojeni k Wallabagu skrze účet <b>%s</b> na adrese <b>%s</b>.',
-      'revoke_access' => 'Odpojit se od Wallabagu!'
+      'revoke_access' => 'Odpojit se od Wallabagu!',
+      'save_changes' => 'Uložit',
+      'button_location' => 'Pozice tlačítka Wallabag. Klávesová zkratka funguje i v případě možnosti \'Skryté\'.',
+      'button_location_header_bottom' => 'Horní i spodní řádek',
+      'button_location_header' => 'Horní řádek',
+      'button_location_bottom' => 'Spodní řádek',
+      'button_location_hidden' => 'Skryté',
     ),
     'notifications' => array(
       'added_article_to_wallabag' => 'Úspěšně přidán <i>\'%s\'</i> do Wallabagu!',
@@ -33,6 +39,8 @@ return array(
       'request_access_failed' => 'Žádost o přístup se nezdařila! Kód chyby Wallabag API: %s',
       'article_not_found' => 'Nelze najít článek!',
       'authorization_revoked' => 'Autorizace úspěšně zrušena!',
+      'changes_saved_sucessfully' => "Změny úspěšně uloženy!",
+      'changes_failed' => "Nepovedlo se uložit změny! Hodnota '%s' není podporována!",
     )
   ),
 );
