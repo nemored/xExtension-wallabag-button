@@ -14,7 +14,7 @@ class FreshExtension_wallabagButton_Controller extends Minz_ActionController
         FreshRSS_Context::userConf()->attributeString('wallabag_keyboard_shortcut')
         : '',
       'icons' => array(
-        'added_to_wallabag' => $extension->getFileUrl('added_to_wallabag.svg', 'svg'),
+        'added_to_wallabag' => $extension->getFileUrl('added_to_wallabag.svg'),
       ),
       'i18n' => array(
         'added_article_to_wallabag' => _t('ext.wallabagButton.notifications.added_article_to_wallabag', '%s'),
