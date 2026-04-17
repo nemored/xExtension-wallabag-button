@@ -9,6 +9,7 @@ $username = FreshRSS_Context::userConf()->attributeString('wallabag_username');
 $access_token = FreshRSS_Context::userConf()->attributeString('wallabag_access_token');
 $refresh_token = FreshRSS_Context::userConf()->attributeString('wallabag_refresh_token');
 $keyboard_shortcut = FreshRSS_Context::userConf()->attributeString('wallabag_keyboard_shortcut');
+$button_location = FreshRSS_Context::userConf()->attributeString('wallabag_button_location');
 ?>
 
 <form action="<?= _url('extension', 'configure', 'e', urlencode($this->getName())) ?>" method="post">
@@ -18,11 +19,21 @@ $keyboard_shortcut = FreshRSS_Context::userConf()->attributeString('wallabag_key
     <div class="group-controls">
       <input type="text" name="wallabag_keyboard_shortcut" id="wallabag_keyboard_shortcut" maxlength="1" value="<?= $keyboard_shortcut; ?>">
     </div>
+
+    <label class="group-name" for="wallabag_button_location"><?= _t('ext.wallabagButton.configure.button_location'); ?></label>
+    <div class="group-controls">
+      <select name="wallabag_button_location" id="wallabag_button_location">
+        <option value="header_bottom" <?= ($button_location == "header_bottom") ? "selected" : "" ?>><?= _t('ext.wallabagButton.configure.button_location_header_bottom'); ?></option>
+        <option value="header" <?= ($button_location == "header") ? "selected" : "" ?>><?= _t('ext.wallabagButton.configure.button_location_header'); ?></option>
+        <option value="bottom" <?= ($button_location == "bottom") ? "selected" : "" ?>><?= _t('ext.wallabagButton.configure.button_location_bottom'); ?></option>
+        <option value="hidden" <?= ($button_location == "hidden") ? "selected" : "" ?>><?= _t('ext.wallabagButton.configure.button_location_hidden'); ?></option>
+      </select>
+    </div>
   </div>
 
   <div class="form-group form-actions">
     <div class="group-controls">
-      <button type="submit" class="btn btn-important"><?= _t('gen.action.submit'); ?></button>
+      <button type="submit" class="btn btn-important"><?= _t('ext.wallabagButton.configure.save_changes'); ?></button>
     </div>
   </div>
 </form>
