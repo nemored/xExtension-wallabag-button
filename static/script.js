@@ -111,7 +111,7 @@ async function add_to_wallabag(wallabagButton, active)
       wallabagButtonImg.classList.remove("wb_disabled");
       loadingAnimation.classList.add("wb_disabled");
 
-      if (!response.ok || response != 301)
+      if (!response.ok)
       {
         if (response.status === 404)
         {
