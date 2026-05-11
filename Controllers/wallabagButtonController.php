@@ -96,10 +96,13 @@ class FreshExtension_wallabagButton_Controller extends Minz_ActionController
     Minz_Request::good(_t('ext.wallabagButton.notifications.authorization_revoked'), $url_redirect);
   }
 
+  /**
+   * @param array<string,mixed> $data Data to be JSON-encoded and sent as response
+   */
   private function sendJsonResponse(array $data): void
   {
     $this->view->_layout(null);
-    $this->view->result_json = json_encode($data);
+    $this->view->result_json = json_encode($data, JSON_UNESCAPED_UNICODE) ?: '{}';
     $this->view->_path('wallabagButton/result.json');
     header('Content-Type: application/json; charset=utf-8');
   }
