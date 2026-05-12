@@ -8,29 +8,26 @@ if (document.readyState && document.readyState !== 'loading')
 
 async function documentReady()
 {
-  var wallabagButtons = document.querySelectorAll('#stream .flux a.wallabagButton');
-  for (var i = 0; i < wallabagButtons.length; i++)
+  // Use capture-phase event delegation so dynamically added buttons work
+  document.addEventListener('click', function (e)
   {
-    let wallabagButton = wallabagButtons[i];
-    wallabagButton.addEventListener('click', async function (e)
+    const wallabagButton = e.target.closest('#stream .flux a.wallabagButton');
+    if (!wallabagButton)
     {
-      if (!wallabagButton)
-      {
-        return;
-      }
+      return;
+    }
 
-      var active = wallabagButton.closest(".flux");
-      if (!active)
-      {
-        return;
-      }
+    e.preventDefault();
+    e.stopPropagation();
 
-      e.preventDefault();
-      e.stopPropagation();
+    const active = wallabagButton.closest(".flux");
+    if (!active)
+    {
+      return;
+    }
 
-      await add_to_wallabag(wallabagButton, active);
-    }, false);
-  }
+    add_to_wallabag(wallabagButton, active);
+  }, true);
 
   if (wallabag_button_vars.keyboard_shortcut)
   {
