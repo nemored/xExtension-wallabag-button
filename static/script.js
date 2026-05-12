@@ -122,10 +122,11 @@ async function add_to_wallabag(wallabagButton, active)
       }
 
       let json = await response.json();
-      if (!json)
+      if (!json || json.status >= 400 || !json.response || !json.response.title)
       {
+        const errorCode = (json && (json.errorCode || json.status)) || 'unknown';
+        openNotification(wallabag_button_vars.i18n.failed_to_add_article_to_wallabag.replace('%s', errorCode), 'wallabag_button_bad');
         requestFailed(activeId, wallabagButtonImg, loadingAnimation);
-        openNotification(wallabag_button_vars.i18n.failed_to_add_article_to_wallabag.replace('%s', json.errorCode), 'wallabag_button_bad');
         return;
       }
 
