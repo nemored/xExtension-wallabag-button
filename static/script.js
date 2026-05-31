@@ -8,29 +8,26 @@ if (document.readyState && document.readyState !== 'loading')
 
 async function documentReady()
 {
-  var wallabagButtons = document.querySelectorAll('#stream .flux a.wallabagButton');
-  for (var i = 0; i < wallabagButtons.length; i++)
+  // Use capture-phase event delegation so dynamically added buttons work
+  document.addEventListener('click', function (e)
   {
-    let wallabagButton = wallabagButtons[i];
-    wallabagButton.addEventListener('click', async function (e)
+    const wallabagButton = e.target.closest('#stream .flux a.wallabagButton');
+    if (!wallabagButton)
     {
-      if (!wallabagButton)
-      {
-        return;
-      }
+      return;
+    }
 
-      var active = wallabagButton.closest(".flux");
-      if (!active)
-      {
-        return;
-      }
+    e.preventDefault();
+    e.stopPropagation();
 
-      e.preventDefault();
-      e.stopPropagation();
+    const active = wallabagButton.closest(".flux");
+    if (!active)
+    {
+      return;
+    }
 
-      await add_to_wallabag(wallabagButton, active);
-    }, false);
-  }
+    add_to_wallabag(wallabagButton, active);
+  }, true);
 
   if (wallabag_button_vars.keyboard_shortcut)
   {
@@ -111,7 +108,7 @@ async function add_to_wallabag(wallabagButton, active)
       wallabagButtonImg.classList.remove("wb_disabled");
       loadingAnimation.classList.add("wb_disabled");
 
-      if (!response.ok || response != 301)
+      if (!response.ok)
       {
         if (response.status === 404)
         {
@@ -122,10 +119,11 @@ async function add_to_wallabag(wallabagButton, active)
       }
 
       let json = await response.json();
-      if (!json)
+      if (!json || json.status >= 400 || !json.response || !json.response.title)
       {
+        const errorCode = (json && (json.errorCode || json.status)) || 'unknown';
+        openNotification(wallabag_button_vars.i18n.failed_to_add_article_to_wallabag.replace('%s', errorCode), 'wallabag_button_bad');
         requestFailed(activeId, wallabagButtonImg, loadingAnimation);
-        openNotification(wallabag_button_vars.i18n.failed_to_add_article_to_wallabag.replace('%s', json.errorCode), 'wallabag_button_bad');
         return;
       }
 
